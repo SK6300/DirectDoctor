@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <ripple xmlns:android="http://schemas.android.com/apk/res/android"
+        android:color="#40FFFFFF"> <item>
+        <selector android:enterFadeDuration="250" android:exitFadeDuration="250">
+
+        <item android:state_pressed="true">
+            <shape>
+                <gradient
+                    android:angle="45"
+                    android:startColor="#00621E"
+                    android:endColor="#0A32B3"
+                    android:type="linear" />
+            </shape>
+        </item>
+
+        <item>
+            <shape>
+                <gradient
+                    android:angle="45"
+                    android:startColor="#0A32B3"
+                    android:endColor="#00621E"
+                    android:type="linear" />
+            </shape>
+        </item>
+
+    </selector>
+</item>
+</ripple>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F8F9FA">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="25dp">
+
+        <RelativeLayout
+            android:id="@+id/headerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/app_gradient"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="?attr/homeAsUpIndicator" />
+
+            <TextView
+                android:id="@+id/tvProfileTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="My Profile"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnEditMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:padding="5dp"
+                android:text="✎ Edit"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/ivProfilePic"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/user_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/headerLayout" />
+
+        <!-- 🚀 Missing ID is perfectly added here -->
+        <TextView
+            android:id="@+id/tvChangePic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Change Picture"
+            android:textColor="#1C53FF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivProfilePic" />
+
+        <LinearLayout
+            android:layout_width="409dp"
+            android:layout_height="635dp"
+            android:orientation="vertical"
+            android:padding="25dp"
+            app:layout_constraintTop_toBottomOf="@id/tvChangePic"
+            tools:layout_editor_absoluteX="2dp">
+
+            <EditText
+                android:id="@+id/etEditName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@android:drawable/editbox_background"
+                android:enabled="false"
+                android:hint="Full Name"
+                android:padding="10dp"
+                android:textColor="#00621E"
+                app:layout_constraintTop_toBottomOf="@+id/tvChangePic" />
+
+            <EditText
+                android:id="@+id/etEditMobile"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:drawable/editbox_background"
+                android:enabled="false"
+                android:hint="Mobile Number"
+                android:inputType="phone"
+                android:padding="10dp"
+                android:textColor="#00621E"
+                app:layout_constraintTop_toBottomOf="@+id/etEditName" />
+
+            <EditText
+                android:id="@+id/etEditAge"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:drawable/editbox_background"
+                android:enabled="false"
+                android:hint="Experience"
+                android:inputType="number"
+                android:padding="10dp"
+                android:textColor="#00621E"
+                app:layout_constraintTop_toBottomOf="@+id/etEditMobile" />
+
+            <EditText
+                android:id="@+id/etEditGender"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:drawable/editbox_background"
+                android:enabled="false"
+                android:hint="Gender"
+                android:padding="10dp"
+                android:textColor="#00621E"
+                app:layout_constraintTop_toBottomOf="@+id/etEditAge" />
+
+            <EditText
+                android:id="@+id/etEditPortfolio"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:drawable/editbox_background"
+                android:enabled="false"
+                android:hint="Portfolio Link (Optional)"
+                android:padding="10dp"
+                android:textColor="#00621E"
+                app:layout_constraintTop_toBottomOf="@+id/etEditGender" />
+
+            <EditText
+                android:id="@+id/etEditWebsite"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:drawable/editbox_background"
+                android:enabled="false"
+                android:hint="Website Link (Optional)"
+                android:padding="10dp"
+                android:textColor="#00621E"
+                app:layout_constraintTop_toBottomOf="@+id/etEditPortfolio" />
+
+            <EditText
+                android:id="@+id/etEditAbout"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:drawable/editbox_background"
+                android:enabled="false"
+                android:gravity="top|start"
+                android:hint="About Us (Optional)"
+                android:padding="10dp"
+                android:textColor="#00621E"
+                app:layout_constraintTop_toBottomOf="@+id/etEditWebsite" />
+
+            <Button
+                android:id="@+id/btnSaveProfile"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/app_gradient"
+                android:text="Save Changes"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

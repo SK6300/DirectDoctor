@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FA"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Doctor Registration"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#003366"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp" />
+
+    <EditText
+        android:id="@+id/etFullName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Full Name"
+        android:background="@android:drawable/editbox_background"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        android:layout_marginTop="30dp" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Email Address"
+        android:inputType="textEmailAddress"
+        android:background="@android:drawable/editbox_background"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/etFullName"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:id="@+id/etRegNumber"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Register Number"
+        android:background="@android:drawable/editbox_background"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:id="@+id/etMobile"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Mobile Number"
+        android:inputType="phone"
+        android:background="@android:drawable/editbox_background"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/etRegNumber"
+        android:layout_marginTop="15dp" />
+
+    <Spinner
+        android:id="@+id/spinnerSpecialisation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:drawable/editbox_background"
+        app:layout_constraintTop_toBottomOf="@+id/etMobile"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:background="@android:drawable/editbox_background"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerSpecialisation"
+        android:layout_marginTop="15dp" />
+
+    <Button
+        android:id="@+id/btnRegisterDoctor"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Register as Doctor"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/app_gradient"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword"
+        android:layout_marginTop="30dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

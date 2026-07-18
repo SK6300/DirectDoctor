@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "386646792851",
+    "project_id": "direct-doctor-7afe5",
+    "storage_bucket": "direct-doctor-7afe5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:386646792851:android:bd4c872972eb99f00f4b66",
+        "android_client_info": {
+          "package_name": "com.example.directdoctor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAh4qcH8IHfPnqGWvXpG1z1HArKPg4LMLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
