@@ -2,45 +2,29 @@ pipeline {
     agent any
 
     environment {
-        ANDROID_HOME = 'C:\\Users\\Hari\\AppData\\Local\\Android\\Sdk'
+        AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+        AWS_DEFAULT_REGION    = 'ap-southeast-2'
+        S3_BUCKET             = 's3://directdoctor-builds-shiva'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                echo 'Checking out source code from Git...'
-                checkout scm
+                git branch: 'main', url: 'https://github.com/SK6300/Direct-Doctor.git'
             }
         }
 
         stage('Build APK') {
             steps {
-                echo 'Building Android Debug APK...'
                 bat 'gradlew.bat assembleDebug'
             }
         }
 
-        stage('Run Unit Tests') {
+        stage('Upload to AWS S3') {
             steps {
-                echo 'Running Unit Tests...'
-                bat 'gradlew.bat test'
+                bat 'aws s3 cp app/build/outputs/apk/debug/app-debug.apk %S3_BUCKET%/builds/app-debug-%BUILD_NUMBER%.apk'
             }
-        }
-
-        stage('Archive Artifacts') {
-            steps {
-                echo 'Archiving build artifacts...'
-                archiveArtifacts artifacts: 'app/build/outputs/apk/debug/*.apk', fingerprint: true
-            }
-        }
-    }
-
-    post {
-        success {
-            echo 'Build and Test completed successfully!'
-        }
-        failure {
-            echo 'Build or Tests failed. Please check logs.'
         }
     }
 }
